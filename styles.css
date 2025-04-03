@@ -3,17 +3,18 @@
 ============================ */
 body, html {
     margin: 0, auto;
-    padding: 2%;
+    padding: 2%, 2%, 2%, 2%;
     width: 100%;
     overflow-x: hidden;
     font-family: Garamond, 'Times New Roman', Times, sans-serif;
     color: white;
+    font-size: large;
 }
 
 /* ==============================
-   Full-Screen Background Video (YT)
+   Full-Screen Background Video
 ============================ */
-.youtube-bg {
+.background {
     position: fixed;
     top: 0;
     left: 0;
@@ -22,7 +23,7 @@ body, html {
     overflow: hidden;
     z-index: -1;
 }
-.youtube-bg iframe {
+.background iframe {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -96,7 +97,6 @@ body, html {
         gap: 10px;
     }
 }
-
 
 /* ============================
    Section: Video with Text
@@ -221,7 +221,6 @@ button:hover {
     animation: bounce 2.5s ease-out forwards;
 }
 
-
 /* ============================
    Circle Containers & Rotation
 ============================ */
@@ -274,10 +273,11 @@ button:hover {
    Hero Section Styling
 ============================ */
 
-/* Hero Section with Navigation Buttons */
+/* Her0 Section (The section holding buttons) with Navigation Buttons */
 .hero {
     height: auto;
-    margin: 30px;
+    margin-left: 10%;
+    margin-right: 10%;
     padding: 15px;
     border: 3px solid white;
     border-radius: 50px;
