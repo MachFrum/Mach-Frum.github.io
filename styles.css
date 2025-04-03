@@ -165,7 +165,7 @@ button {
     font-size: 16px;
     border-radius: 25px;
     cursor: pointer;
-    transition: all 1s ease;
+    transition: all 0.5s ease;
 }
 button:hover {
     background-color: rgba(255, 255, 255, 0.1);
@@ -197,7 +197,7 @@ button:hover {
     100% { transform: translateX(0); }    
 }
 .bouncing-text {
-    animation: bounce 7s ease-out forwards;
+    animation: bounce 6s ease-out forwards;
 }
 
 /* Bouncing text animations for the buttons on the project section */
@@ -218,7 +218,7 @@ button:hover {
 }
 
 .bouncing-text2 {
-    animation: bounce 2.5s ease-out forwards;
+    animation: bounce 5s ease-out forwards;
 }
 
 /* ============================
