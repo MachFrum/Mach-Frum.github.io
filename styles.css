@@ -5,23 +5,21 @@
 /* Hide scrollbar for Chrome, Safari and Opera */
 ::-webkit-scrollbar {
     display: none;
-  }
-  
-
+}
 
 body, html {
-    margin: 0, auto;
-    padding: 2%, 2%, 2%, 2%;
+    margin: 0 auto;
+    padding: 2%;
     width: 100%;
     overflow-x: hidden;
     font-family: Garamond, 'Times New Roman', Times, sans-serif;
     color: white;
-    font-size: large;
+    font-size: large; 
 
-/* Hide scrollbar for IE, Edge and Firefox */
+    /* Hide scrollbar for IE, Edge and Firefox */
+
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
-
 }
 
 /* ==============================
@@ -44,7 +42,7 @@ body, html {
     height: 120vh;
     transform: translate(-50%, -50%);
     pointer-events: none;
-    object-fit: cover; /* Crop and fill the container especially for small screen sizes  */
+    object-fit: cover; /* Crops and fill the container especially for small screen sizes */
 }
 
 /* =================================
@@ -54,29 +52,18 @@ body, html {
     display: flex;
     align-items: center;  
     justify-content: flex-start;
-    gap: 20px;
+    gap: 15px;
     width: 100%;
-    margin: 15%, 15%, 15%, 15%;
-    padding: 20px; 
-}
-
-
-/* Container for Logo and Typewriter Text */
-.container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 20px;
-    width: 100%;
-    padding: 20px;
+    height: 30%;
+    margin: 10%;
+    padding: 10px; 
 }
 
 /* ============================
    Typewriter Effect
 ============================ */
 .typewriter {
-    font-size: clamp(1.5rem, 5vw, 2.5rem);
-    font-size: 30px;
+    font-size: clamp(1.2rem, 5vw, 1.8rem);
     font-family: monospace;
     font-weight: bold;
     text-align: left;
@@ -97,10 +84,6 @@ body, html {
 
 /* Optimizing for Small Screens */
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        text-align: center;
-    }
     .typewriter {
         font-size: 24px;
         max-width: 90%;
@@ -127,7 +110,6 @@ body, html {
     border-radius: 10px;
 }
 
-/* Responsive adjustments for video-text-section */
 @media (max-width: 768px) {
     .video-text-section {
         flex-direction: column;
@@ -139,7 +121,6 @@ body, html {
     }
 }
 
-/* Text Content */
 .text-content {
     flex: 1;
     text-align: left;
@@ -147,7 +128,6 @@ body, html {
     font-family: 'Courier New', Courier, monospace;
 }
 
-/* Video Wrapper */
 .video-wrapper {
     flex: 1;
     max-width: 50%;
@@ -170,6 +150,8 @@ body, html {
 /* ============================
    Buttons & Animations
 ============================ */
+
+/* Base button styling */
 button {
     background-color: transparent;
     color: white;
@@ -184,36 +166,47 @@ button:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Bouncing button animation */
-.bouncing-button {
-    position: relative;
-    animation: bounce 7s infinite;
+/* --------------------------------
+   Horizontal Translate/Bounce Animation 
+------------------------------------ */
+/* For buttons with horizontal translate effect */
+/* Left-to-Right */
+.translate-button-left {
+    animation: translate-bounce-left 6s ease-out forwards;
 }
-@keyframes bounce {
+
+@keyframes translate-bounce-left {
+    0% { transform: translateX(-100%); opacity: 0; }
+    60% { transform: translateX(10px); opacity: 1; }
+    80% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }    
+}
+
+/* Right-to-Left */
+.translate-button-right {
+    animation: translate-bounce-right 6s ease-out forwards;
+}
+
+@keyframes translate-bounce-right {
+    0% { transform: translateX(100%); opacity: 0; }
+    60% { transform: translateX(-10px); opacity: 1; }
+    80% { transform: translateX(5px); }
+    100% { transform: translateX(0); }    
+}
+
+/* ----------------------------
+   Vertical Bounce Animation 
+---------------------------- */
+/* For buttons with vertical bounce */
+.bounce-button {
+    animation: bounce-vertical 7s infinite;
+}
+
+@keyframes bounce-vertical {
     0%, 100% { transform: translateY(10px); }
     50% { transform: translateY(-10px); }
 }
 
-/* Bouncing text animations for the buttons on the intro section */
-.bouncing-text {
-    font-size: 24px;
-    font-family: Arial, sans-serif;
-    font-weight: bold;
-    display: inline-block;
-    white-space: nowrap;
-    overflow: hidden;
-}
-@keyframes bounce {
-    0% { transform: translateX(-100%); opacity: 0; }
-    60% { transform: translateX(10px); opacity: 1; } /* Overshoot */
-    80% { transform: translateX(-5px); }
-    100% { transform: translateX(0); }    
-}
-.bouncing-text {
-    animation: bounce 6s ease-out forwards;
-}
-
-/* Bouncing text animations for the buttons on the project section */
 .bouncing-text2 {
     font-size: 24px;
     font-family: Arial, sans-serif;
@@ -221,28 +214,16 @@ button:hover {
     display: inline-block;
     white-space: nowrap;
     overflow: hidden;
-}
-@keyframes bounce {
-    0% { transform: translateX(0); opacity: 0; }
-    25% { transform: translateX(15px); opacity: 1; }
-    50% { transform: translateX(-15px); }
-    75% { transform: translateX(5px); }
-    100% { transform: translateX(0); }
-}
-
-.bouncing-text2 {
     animation: bounce 5s ease-out forwards;
 }
 
 /* ============================
    Circle Containers & Rotation
 ============================ */
-
-/* Large circle container */
 .circle-container {
     position: relative;
-    margin: 10px, 10px, 10px, 10px;
-    padding: 5px, 5px, 5px, 5px;
+    margin: 10px;
+    padding: 2px;
     width: 12.5%;
     height: 12.5%;
     display: flex;
@@ -259,13 +240,14 @@ button:hover {
     object-fit: cover;
 }
 
-/* Small circle container (spining Logos) */
+/* Circle-Logo in between texts */
 .circle-container2 {
     position: relative;
     width: 100px;
     height: 100px;
-    margin-left: 15px;
-    margin-top: 15px;
+    margin-left: 40px;
+    margin-top: 20px;
+    margin-bottom: 15px;
     border: 3px solid rgb(10, 10, 10);
     display: flex;
     justify-content: center;
@@ -287,8 +269,6 @@ button:hover {
 /* ============================
    Hero Section Styling
 ============================ */
-
-/* Hero Section (The section holding buttons) with Navigation Buttons */
 .hero {
     height: auto;
     margin-left: 10%;
@@ -305,8 +285,9 @@ button:hover {
     flex-wrap: wrap;
     animation: gradient 15s ease infinite;
 }
+
 /* ============================
-   Contact form Section
+   Contact Form Section
 ============================ */
 .contact-form {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0);
@@ -318,7 +299,7 @@ button:hover {
 .contact-form label {
     display: block;
     margin-bottom: 10px;
-    color: #f5efef; /* White text */
+    color: #f5efef;
 }
 .contact-form input[type="text"],
 .contact-form textarea {
@@ -338,7 +319,7 @@ button:hover {
     cursor: pointer;
 }
 .contact-form input[type="submit"]:hover {
-    background-color: #113b68; /* Darker blue on hover */
+    background-color: #113b68;
 }
 
 /* ============================
@@ -356,4 +337,12 @@ button:hover {
 }
 .icon img:hover {
     transform: scale(1.1);
+}
+
+/* ============================
+   Footer Section
+============================ */
+.footer {
+    text-align: center;
+    padding: 20px;
 }
