@@ -1,6 +1,14 @@
 /* ============================
    General Styles & Reset
 ============================ */
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+::-webkit-scrollbar {
+    display: none;
+  }
+  
+
+
 body, html {
     margin: 0, auto;
     padding: 2%, 2%, 2%, 2%;
@@ -9,6 +17,11 @@ body, html {
     font-family: Garamond, 'Times New Roman', Times, sans-serif;
     color: white;
     font-size: large;
+
+/* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+
 }
 
 /* ==============================
@@ -31,7 +44,7 @@ body, html {
     height: 120vh;
     transform: translate(-50%, -50%);
     pointer-events: none;
-    object-fit: cover; /* Crop and fill the container */
+    object-fit: cover; /* Crop and fill the container especially for small screen sizes  */
 }
 
 /* =================================
@@ -39,12 +52,12 @@ body, html {
 ============================ */
 .container {
     display: flex;
-    align-items: center;  /* Vertically aligns items */
+    align-items: center;  
     justify-content: flex-start;
     gap: 20px;
     width: 100%;
     margin: 15%, 15%, 15%, 15%;
-    padding: 20px; /* Added padding for better spacing on small screens */
+    padding: 20px; 
 }
 
 
@@ -70,7 +83,7 @@ body, html {
     display: inline-block;
     white-space: nowrap;
     overflow: hidden;
-    max-width: 30%;
+    max-width: 25%;
     border-right: 2px solid rgb(251, 242, 242);
     animation: typewriter 9s steps(70) forwards, blink 0.7s infinite;
 }
@@ -82,7 +95,7 @@ body, html {
     50% { border-color: transparent; }
 }
 
-/* Additional Media Query for Small Screens */
+/* Optimizing for Small Screens */
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
@@ -228,14 +241,14 @@ button:hover {
 /* Large circle container */
 .circle-container {
     position: relative;
-    margin-top: 5px;
-    margin-left: 5px;
+    margin: 10px, 10px, 10px, 10px;
+    padding: 5px, 5px, 5px, 5px;
     width: 12.5%;
     height: 12.5%;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 5px solid rgb(17, 16, 16);
+    border: 3px solid rgb(10, 10, 10);
     border-radius: 50%;
     overflow: hidden;
     animation: rotate-circle 100s linear infinite;
@@ -246,12 +259,14 @@ button:hover {
     object-fit: cover;
 }
 
-/* Small circle container (consolidated duplicate definitions) */
+/* Small circle container (spining Logos) */
 .circle-container2 {
     position: relative;
     width: 100px;
     height: 100px;
-    margin-left: 10px;
+    margin-left: 15px;
+    margin-top: 15px;
+    border: 3px solid rgb(10, 10, 10);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -273,7 +288,7 @@ button:hover {
    Hero Section Styling
 ============================ */
 
-/* Her0 Section (The section holding buttons) with Navigation Buttons */
+/* Hero Section (The section holding buttons) with Navigation Buttons */
 .hero {
     height: auto;
     margin-left: 10%;
@@ -289,6 +304,41 @@ button:hover {
     justify-content: center;
     flex-wrap: wrap;
     animation: gradient 15s ease infinite;
+}
+/* ============================
+   Contact form Section
+============================ */
+.contact-form {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0);
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    margin: 20px auto;
+}
+.contact-form label {
+    display: block;
+    margin-bottom: 10px;
+    color: #f5efef; /* White text */
+}
+.contact-form input[type="text"],
+.contact-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 2px solid #007bff;
+    border-radius: 4px;
+}
+.contact-form input[type="submit"] {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 10px 30px;
+    font-size: 16px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+.contact-form input[type="submit"]:hover {
+    background-color: #113b68; /* Darker blue on hover */
 }
 
 /* ============================
